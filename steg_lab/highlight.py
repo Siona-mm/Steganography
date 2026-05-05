@@ -9,13 +9,11 @@ image = Image.open(coverImagePath).convert("RGB")
 width, height = image.size
 pixels = image.load()
 
-
 total_bits_needed = 14 + (1488 * 7)
 
 shuffledIndices = list(range(width * height))
 random.seed(key)
 random.shuffle(shuffledIndices)
-
 
 for i in range(total_bits_needed):
     idx = shuffledIndices[i]
@@ -24,4 +22,3 @@ for i in range(total_bits_needed):
     pixels[x, y] = (255, 0, 0) 
 
 image.save(outputHighlight)
-print(f"Highlight image saved as {outputHighlight}")
