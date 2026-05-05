@@ -110,7 +110,4 @@ Parametri më kritik është **Çelësi (Key)**. Meqenëse sistemi e shpërndan 
 **11. Si mund të përmirësohej sistemi nëse sekreti do të ishte një imazh ose logo në vend të tekstit?**
 Nëse do të fshihnim një logo, do të na duhej shumë më tepër hapësirë. Një përmirësim do të ishte përdorimi i të tre kanaleve të ngjyrave (Red, Green dhe Blue) në vend të vetëm njërit, për të rritur kapacitetin. Gjithashtu, do të ishte e nevojshme të shtonim një algoritëm kompresimi për logon përpara se ta fshihnim, në mënyrë që të zinte sa më pak pikselë në imazhin kryesor.
 
----
 
-### Këshillë për dorëzimin:
-Ky seksion shkon në fund të raportit tënd, fiks para detyrës "Extension task" (highlight.py). Tani raporti yt është i plotë!
