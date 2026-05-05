@@ -89,3 +89,28 @@ Nëse përdorim `bit_position = 7` (Biti më pak i rëndësishëm - LSB), ndrysh
 
 ### 7. Pse dështon nxjerrja me çelës të gabuar?
 Çelësi (key) funksionon si "seed" për gjenerimin e renditjes rastësore të pikselëve. Nëse përdoret një çelës i gabuar, programi kërkon bite në koordinata krejtësisht të tjera nga ato ku është fshehur teksti. Kjo bën që rezultati i nxjerrë të jetë një varg simbolesh pa asnjë kuptim.
+
+
+Ky është seksioni i fundit i raportit tënd. I kam shkruar përgjigjet në një mënyrë të thjeshtë dhe logjike, ashtu siç do t'i shpjegonte një student pas përfundimit të laboratorit.
+
+---
+
+## Reflektim
+
+**8. Çfarë e bën mesazhin e fshehur të vështirë për t'u dalluar duke parë vetëm imazhin?**
+Arsyeja kryesore është se ne po ndryshojmë vetëm "Bitin më pak të rëndësishëm" (LSB). Çdo piksel ka një vlerë ngjyre nga 0 deri në 255. Kur ndryshojmë bitin e fundit, vlera e ngjyrës ndryshon vetëm me 1 njësi (për shembull, nga 150 në 151). Ky ndryshim është aq i vogël sa syri i njeriut nuk mund ta dallojë dot diferencën e nuancës, duke e bërë mesazhin praktikisht të padukshëm.
+
+**9. Cili parametër është më i rëndësishmi për një nxjerrje të suksesshme?**
+Parametri më kritik është **Çelësi (Key)**. Meqenëse sistemi e shpërndan mesazhin nëpër pikselë në mënyrë rastësore duke përdorur një "seed", pa çelësin e saktë është e pamundur të gjesh renditjen e duhur të koordinatave. Nëse çelësi qoftë edhe me një shifër ndryshe, procesi i nxjerrjes do të dështojë totalisht.
+
+**10. Cilat janë dy dobësitë e këtij sistemi të thjeshtë steganografie?**
+* **Ndjeshmëria ndaj modifikimeve:** Sistemi është shumë "fragjil". Nëse imazhi pëson qoftë edhe një ndryshim të vogël, si krasitja (cropping), ndryshimi i madhësisë (resizing) ose kompresimi në formatin JPG, bitet e fshehura shkatërrohen dhe mesazhi humbet.
+* **Mungesa e enkriptimit:** Ky sistem vetëm fsheh mesazhin, por nuk e enkripton atë. Nëse dikush e zbulon metodën dhe çelësin tonë, ai mund ta lexojë mesazhin menjëherë si tekst të thjeshtë (plaintext).
+
+**11. Si mund të përmirësohej sistemi nëse sekreti do të ishte një imazh ose logo në vend të tekstit?**
+Nëse do të fshihnim një logo, do të na duhej shumë më tepër hapësirë. Një përmirësim do të ishte përdorimi i të tre kanaleve të ngjyrave (Red, Green dhe Blue) në vend të vetëm njërit, për të rritur kapacitetin. Gjithashtu, do të ishte e nevojshme të shtonim një algoritëm kompresimi për logon përpara se ta fshihnim, në mënyrë që të zinte sa më pak pikselë në imazhin kryesor.
+
+---
+
+### Këshillë për dorëzimin:
+Ky seksion shkon në fund të raportit tënd, fiks para detyrës "Extension task" (highlight.py). Tani raporti yt është i plotë!
