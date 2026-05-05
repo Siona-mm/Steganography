@@ -6,10 +6,10 @@ import os
 
 key = 2026
 colourPlane = 1     
-significantBit = 7    
-coverImagePath = 'steg_lab/img/flowers.bmp'
-secretFilePath = 'steg_lab/secret.txt'
-outputImagePath = "steg_lab/stego-image.bmp"
+significantBit = 7   
+coverImagePath = 'flowers.bmp'      
+secretFilePath = 'secret.txt'      
+outputImagePath = "stego-image.bmp"
 
 
 if not os.path.exists(coverImagePath):

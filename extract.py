@@ -6,7 +6,7 @@ import sys
 key = 2026
 colourPlane = 1
 significantBit = 7
-stegoImagePath = "steg_lab/stego-image.bmp"
+stegoImagePath = "stego-image.bmp"
 
 image = Image.open(stegoImagePath).convert("RGB")
 width, height = image.size
